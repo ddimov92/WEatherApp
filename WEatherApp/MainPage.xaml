@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="WEatherApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WEatherApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock" >
+            <Setter Property="FontFamily" Value="Cooper Black"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        
+            <Storyboard x:Name="MyStoryboard">
+                <DoubleAnimation From="0.0" To="1.0"
+                             Duration="0:0:10"
+                             Storyboard.TargetName="NameTextBlock"
+                             Storyboard.TargetProperty="Opacity"  
+                             />
+            </Storyboard>
+        
+    </Page.Resources>
+
+
+    <Grid Background="#2A3132" Name="MainGrid">
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Background="#2A3132">
+            <Button Name="GetWeatherButton" Content="Get Weather" Click="GetWeatherButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cooper Black" FontSize="25"/>
+            <Image Name="ResultImage" Width="500" Height="500" Visibility="Collapsed"/>
+            <TextBlock Name="NameTextBlock" Visibility="Collapsed"/>
+            <TextBlock Name="TempTextBlock" Visibility="Collapsed"/>
+            <TextBlock Name="WeatherTextBlock" Visibility="Collapsed"/>
+            
+            <Button Name="TestButton" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Testing" Click="TestButton_Click" FontFamily="Cooper Black" FontSize="25" Visibility="Collapsed"/>
+            <TextBlock Name="TestTextBlock" Visibility="Collapsed"/>
+
+            <ComboBox Name="MyComboBox" Background="White" SelectionChanged="MyComboBox_SelectionChanged" Width="Auto">
+                <ComboBoxItem Name="KardzhaliItem" FontSize="35" FontFamily="Cooper Black" Foreground="Black" Content="Kardzhali"/>
+                <ComboBoxItem Name="PlovdivItem" FontSize="35" FontFamily="Cooper Black" Foreground="Black" Content="Plovdiv"/>
+                <ComboBoxItem Name="SofiaItem" FontSize="35" FontFamily="Cooper Black" Foreground="Black" Content="Sofia"/>
+                <ComboBoxItem Name="DevilItem" FontSize="35" FontFamily="Cooper Black" Foreground="Black" Content="Devin"/>
+            </ComboBox>
+
+        </StackPanel>
+    </Grid>
+
+
+</Page>
